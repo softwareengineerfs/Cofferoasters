@@ -1,3 +1,11 @@
+/* CUSTOM PROPS*/
+:root {
+  --text-color: #333;
+  --accent-color-green: #0a775f;
+  --outline-color: var(--accent-color-green);
+}
+
+
 /* GLOBAL STYLES*/
 html {
   box-sizing: border-box;
@@ -17,28 +25,137 @@ body {
  padding: 0%;
  margin: 0%;
  height: 100%;
- font-family: "Arial",sans-serif;
+ font-family: "Roboto","Arial",sans-serif;
  font-size: 16px;
- line-height: 1.5;
+ line-height: 28px;
  background-color: #fff;
- color: #222;
+ color: var(--text-color);
 }
 
 img {
   max-width: 100%;
   height: auto;
 }
+*:focus {
+  outline: 2px solid var(--outline-color);
+  outline-offset: 2px;
+}
 
 /* CONTAINER */
 .container {
 width: 100%;
-max-width: 1200;
+max-width: 1440px;
 margin-right: auto;
 margin-left: auto;
-padding-left: 50px;
-padding-right: 50px;
+padding-left: 20px;
+padding-right: 20px;
 }
 
 .main-content {
   flex-grow: 1;
+}
+
+/*FONTS */
+/* roboto-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-v30-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/roboto-v30-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/roboto-v30-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* SITE HEADER INTRO  */
+.site-header-hero-wrapper {
+  background-image: url("../img/header-bg.jpg");
+}
+ /* SITE HEADER  */
+ .site-header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.site-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.site-header-logo-link {
+  display: flex;
+  text-decoration: none;
+}
+.site-header-logo-link:hover {
+  opacity: 0.8;
+}
+.site-header-logo-link:active {
+  opacity: 0.6;
+}
+
+.site-header-logo-img {
+  width: 235px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* sitenav */
+
+.sitenav-list {
+  display: flex;
+  padding: 0%;
+  margin: 0;
+  list-style-type: none;
+}
+.sitenav-item:not(:last-child) {
+  margin-right: 40px;
+}
+.sitenav-link {
+  display: block;
+  font-size: 12px;
+  line-height: normal;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+.sitenav-link:hover {
+  color: var(--accent-color-green);
+}
+.sitenav-link:active {
+  opacity: 0.6;
+}
+
+
+
+/* RETINA IMAGES*/
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+  .site-header-hero-wrapper {
+    background-image: url("../img/header-bg@2x.jpg");
+  }
+
 }
